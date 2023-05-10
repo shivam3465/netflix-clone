@@ -1,0 +1,99 @@
+.cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;        
+    position: relative;
+    box-sizing: border-box;
+    width: 21rem;
+    margin: auto;
+    margin: 0.5rem 1rem;        
+    img{
+        // border: 1px solid white;
+        height: 13rem;
+        width: 20rem;
+        margin: 1rem 0.8rem;
+        border-radius: 0.2rem;
+        position: relative;
+    }
+    &:hover {            
+        filter:opacity(0.8);
+        filter: contrast(1.122);
+        filter:blur(30%);
+        cursor: pointer;                                 
+        .details{
+            display: flex;
+        }
+    }
+    &:active{
+        transform: scale(0.96);
+    }    
+    .details{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;            
+        margin: 0.3rem;
+        font-size: 1.1rem;            
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        bottom: 1rem;
+        left: 0rem;
+        background-color: #181818a5;
+        display: none;
+        .title{
+            padding: 0.3rem 0.4rem;
+            text-align: center;
+        }    
+        .title{
+            margin-top: 1rem;
+            font-size: 1.3rem;                
+            font-weight: 500;                
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }       
+        .bottom{
+            display: flex;
+            flex-direction: row;                             
+            width: auto;
+            padding: 0.3rem 0.2rem;
+            font-size: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            div{
+                margin: 0rem 0.5rem;
+                width: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 0.5rem;
+                svg{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 580px){
+    .cards{
+        width: 30rem;
+        height: 19rem;
+        img{
+            width: 29rem;
+            height: 17rem;
+            margin: 2rem 0.6rem;
+        }
+        .details{
+            .title{
+                font-size: 1.6rem;
+    
+            }
+            .bottom{
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

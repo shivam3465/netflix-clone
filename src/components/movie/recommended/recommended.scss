@@ -1,0 +1,102 @@
+#recommended{
+    font-family: 'Montserrat';
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-bottom: 4rem;
+    padding-top: 1rem;    
+    h2{
+        font-weight: 400;
+        font-size: 1.5rem;
+        padding-left: 0.2rem;
+    }
+    .bottom-row{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding-right: 1rem;
+        .card-image{
+            margin-right: 1rem;
+            margin-top: 1.5rem;
+            width: 13rem;
+            height: 21rem;
+            border-radius: 0.3rem;
+            &:active{
+                transform: scale(0.96);
+            }
+        }
+        #card-title{
+            // border: 2px solid grey;
+            color: white;
+            font-size: 1.4rem;
+            width: 12rem;
+            text-align: center;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+@media only screen and (max-width: 1120px) and (min-width: 800px) {
+    html{
+        font-size: 80%;
+    }
+    #recommended{
+        .bottom-row{
+            .card-image{
+                height: 27rem;
+                width: 15rem;
+                margin-right: 1.4rem;
+                margin-top: 1.6rem;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 800px) and (min-width: 768px) {    
+    #recommended{
+        .bottom-row{
+            .card-image{
+                height: 28rem;
+                width: 15rem;
+                margin: 1.5rem;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 768px) and (min-width: 651px) {    
+    #recommended{
+        .bottom-row{
+            .card-image{
+                height: 27rem;
+                width: 14rem;
+                margin: 1.3rem;
+                margin-top: 1.5rem;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 651px) and (min-width: 580px) {  
+    #recommended{
+        .bottom-row{
+            .card-image{
+                height: 23rem;
+                width: 11rem;
+                margin: 1.3rem;
+                margin-top: 1.5rem;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 580px){    
+    #recommended{
+        padding-left: 1.2rem;
+        .bottom-row{
+            .card-image{
+                height: 25rem;
+                width: 15rem;
+                margin: 1rem 0.7rem ;
+            }
+        }
+    }
+}
