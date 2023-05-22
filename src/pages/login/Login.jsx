@@ -11,11 +11,11 @@ export default function login() {
             <h2 className='input-section title' >Sign In</h2>            
             <div className='input-section'>
                 <label htmlFor="email" >Email:</label>
-                <input type='email' name='email' id='email'placeholder='Email' />
+                <input type='email' name='email' id='email'placeholder='Email' required/>
             </div>
             <div className='input-section'>
                 <label htmlFor="password" >Password:</label>
-                <input type="password" name='password' id='password'placeholder='Password' />
+                <input type="password" name='password' id='password'placeholder='Password' required/>
             </div>
             <button type="submit">Sign In</button>
             <div className='register input-section bottom'>

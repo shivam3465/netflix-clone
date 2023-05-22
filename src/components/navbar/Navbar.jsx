@@ -19,9 +19,9 @@ const MainNavBar=({name,isScrolled,setHamActive})=>{
   return (
     <div className={name} style={{backgroundColor: isScrolled && name==="mobile-view-navbar" && "black",transition:"background-color 0.7s ease-in-out"}}>
       <Link to={"/"} onClick={()=>setHamActive(false)}>Home</Link>
-      <Link to={"/"} onClick={()=>setHamActive(false)}>TV Series</Link>
-      <Link to={"/"} onClick={()=>setHamActive(false)}>Movies</Link>
-      <Link to={"/"} onClick={()=>setHamActive(false)}>My List</Link>
+      <Link to={"/tv-series"} onClick={()=>setHamActive(false)}>TV Series</Link>
+      <Link to={"/movies"} onClick={()=>setHamActive(false)}>Movies</Link>
+      <Link to={"/my-list"} onClick={()=>setHamActive(false)}>My List</Link>
     </div>
   )
 }

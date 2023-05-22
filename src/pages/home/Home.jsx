@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './Home.scss';
 import homeimage from '../../assets/poster.webp'
-import Row from '../Row/Row';
-import Footer from '../footer/Footer';
+import Row from '../../components/Row/Row'
+import Footer from '../../components/footer/Footer'
+import Spinner from '../../components/spinner/Spinner'
 import axios from 'axios';
-import Spinner from '../spinner/Spinner';
+import { apiKey, baseUrl } from '../../App';
+
 // import Link from 'react-router-dom'
 
 
@@ -23,10 +25,10 @@ export default function Home() {
 
   useEffect(()=>{
     const fetcher=async ()=>{
-      const obj1= await axios.get(`https://api.themoviedb.org/3/movie/${tag[0]}?api_key=0e60dc2cb3e238675effce08a8cdd770&language=en-US`)
-      const obj2= await axios.get(`https://api.themoviedb.org/3/movie/${tag[1]}?api_key=0e60dc2cb3e238675effce08a8cdd770&language=en-US`)
-      const obj3= await axios.get(`https://api.themoviedb.org/3/movie/${tag[2]}?api_key=0e60dc2cb3e238675effce08a8cdd770&language=en-US`)
-      const obj4= await axios.get(`https://api.themoviedb.org/3/movie/${tag[3]}?api_key=0e60dc2cb3e238675effce08a8cdd770&language=en-US`)
+      const obj1= await axios.get(`${baseUrl}/movie/${tag[0]}?api_key=${apiKey}`)
+      const obj2= await axios.get(`${baseUrl}/movie/${tag[1]}?api_key=${apiKey}`)
+      const obj3= await axios.get(`${baseUrl}/movie/${tag[2]}?api_key=${apiKey}`)
+      const obj4= await axios.get(`${baseUrl}/movie/${tag[3]}?api_key=${apiKey}`)
 
       setA((arr)=>{
          const tem=[...arr,obj1.data.results,obj2.data.results,obj3.data.results,obj4.data.results]
@@ -36,6 +38,7 @@ export default function Home() {
       setSpinning(()=>  false);
     }
     fetcher();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
     
   return (

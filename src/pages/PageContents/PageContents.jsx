@@ -1,6 +1,6 @@
 import React from 'react'
 import './pageContents.scss'
-import Card from '../card/Card';
+import Card from '../../components/card/Card'
 
 export default function PageContents({arr,category}) {
   return (

@@ -19,10 +19,10 @@ export default function Register() {
             <div className='title'>Unlimted movies, TV shows, and more.</div>
             <div className='middle'>Watch anywhere .Cancel anytime</div>
             <div className='bottom'>Ready to watch? Enter your email to create or restart you membership.</div>        
-            <div className='register-input'>
-                <input type="email" placeholder='Email'/>                
-                <div className='register-button'>Get Started</div>
-            </div>            
+            <form className='register-input'>
+                <input type="email" placeholder='Email' required/>                
+                <button type='submit' className='register-button'>Get Started</button>
+            </form>            
         </div>
         <div id='register-background-effect'></div>
     </div>

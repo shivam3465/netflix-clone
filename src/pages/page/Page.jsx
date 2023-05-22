@@ -1,12 +1,12 @@
 import React from 'react'
 import './page.scss'
 import { useParams } from 'react-router-dom'
-import {PageNavBar,pageNo} from '../PageNavBar/PageNavBar.jsx';
+import {PageNavBar} from '../PageNavBar/PageNavBar.jsx';
 import PageContents from '../PageContents/PageContents.jsx';
-import Footer from '../footer/Footer'
+import Footer from '../../components/footer/Footer';
 import axios from 'axios';
 import { useEffect,useState } from 'react';
-import Spinner from '../spinner/Spinner';
+import Spinner from '../../components/spinner/Spinner';
 
 export default function Page() {
   const params=useParams();
@@ -14,10 +14,10 @@ export default function Page() {
   const [pageNo,setPageNo]=useState(1);
   const [arr,setArr]=useState([]);
   const [spinning,setSpinning]=useState(true);
-  window. scrollTo(0, 0)
+  window.scrollTo(0, 0)
 
   useEffect(()=>{
-    setSpinning(()=> true);
+    setSpinning(()=> true);    
     const fetcher= async ()=>{
       const {data}=await axios.get(`https://api.themoviedb.org/3/movie/${category}?api_key=0e60dc2cb3e238675effce08a8cdd770&language=en-US&page=${pageNo}`);
 
@@ -25,6 +25,7 @@ export default function Page() {
         setArr(()=> data.results);
     }
     fetcher();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[pageNo])
 
   return (

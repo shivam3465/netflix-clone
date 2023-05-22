@@ -1,16 +1,16 @@
 import React from 'react'
 import {Link,useParams} from 'react-router-dom'
-import './movie.scss';
+import './TvShow.scss';
 import netflix_icon from '../../assets/favicon-netflix.png'
 import netflix_logo from '../../assets/logo.png'
 import notFoundImage from '../../assets/not-found-image.jpg'
 import Footer from '../footer/Footer';
 import { PlayArrow} from '@mui/icons-material';
-import Recommended from './recommended/Recommended';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
 import Spinner from '../spinner/Spinner';
 import { baseUrl ,apiKey,imagebaseUrl} from '../../App'; 
+import Recommended from '../movie/recommended/Recommended';
 
 const TrailerCard=({id,imageLink,videoKey})=>{  
   return (
@@ -34,10 +34,11 @@ const NotAvailable=()=>{
   );
 }
 
-export default function Movie() {
+export default function TvShow() {
   const params=useParams();  
   const idNo=params.id;
-  let imageUrl="";
+  let imageUrl="";  
+
 
   const [movie,setMovie]=useState({})
   const [arr,setArr]=useState([]);
@@ -50,11 +51,10 @@ export default function Movie() {
   useEffect(()=>{
       setLoading(()=> true);
       const fetcher= async ()=>{        
-          const data1=await axios.get(`${baseUrl}/movie/${idNo}?api_key=${apiKey}`);            
-          const data2=await axios.get(`${baseUrl}/movie/${idNo}/images?api_key=${apiKey}`);            
-          const data3=await axios.get(`${baseUrl}/movie/${idNo}/videos?api_key=${apiKey}`);            
-  
-          // console.log(data3.data)  
+            const data1=await axios.get(`${baseUrl}/tv/${idNo}?api_key=${apiKey}`);            
+            const data2=await axios.get(`${baseUrl}/tv/${idNo}/images?api_key=${apiKey}`);            
+            const data3=await axios.get(`${baseUrl}/tv/${idNo}/videos?api_key=${apiKey}`);            
+                        
             setTrailer(()=> data3.data.results);
             setMovie(()=> data1.data)      
             setImageLink(()=> data1.data.backdrop_path);
@@ -89,10 +89,19 @@ export default function Movie() {
         <div id='top'>                      
           <div id="movie-detail">          
             <img src={logoLink.length ? `https://image.tmdb.org/t/p/w500${logoLink}` :netflix_logo} alt="" id="movie-logo" />
-            <div id="movie-title" className='middle'>{movie.original_title}</div>
+            <div id="movie-title" className='middle'>{movie.name}</div>
+
             <div id="middle-details" className='middle'>
-              {movie.release_date.slice(0,4)} &nbsp;| <span id='adult-checker'> U/A {movie.adult ? "18+":"16+"}</span> &nbsp; | {Math.floor(movie.runtime/60)}h {movie.runtime%60}m  |  {movie.genres[0].name}
+              {/* {console.log("here is the movie ",movie)} */}
+              {movie.first_air_date.slice(0,4)} &nbsp;| &nbsp; 
+              <span id='adult-checker'>  
+                U/A {movie.adult ? "18+":"16+"}
+              </span>
+               &nbsp; | &nbsp; 
+                {movie.number_of_seasons} Seasons  | &nbsp;  
+              {movie.genres[0].name}
             </div>
+
             <div id="movie-desc" className='middle'>{movie.overview} </div>
           </div>
         </div>
@@ -114,7 +123,7 @@ export default function Movie() {
       <div id='trailer'>
         <div className='top'>
           <span>Videos</span> 
-          <span className='title'>{movie?.original_title}</span>
+          <span className='title'>{movie?.name}</span>
         </div>
 
         <div id="trailer-row">  
@@ -132,10 +141,10 @@ export default function Movie() {
           }         
         </div>
 
-        <div className='bottom'><span>Trailer</span>: {movie?.original_title}</div>
+        <div className='bottom'><span>Trailer</span>: {movie?.name}</div>
       </div>
 
-      <Recommended idNo={idNo} type={'movie'}/>
+      <Recommended idNo={idNo} type={'tv'}/>
 
       <Footer/>
   
