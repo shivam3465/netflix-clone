@@ -28,3 +28,20 @@
         }
     }
 }
+
+
+@media screen and (max-width:450px) {
+    .movies-page-row{
+        h2{
+            font-size: 2.1rem;
+        }
+        .movie-row-container{
+            .card{
+                font-size: 1.5rem;
+                img{
+                    height: 14rem;
+                }
+            }
+        }
+    }
+}

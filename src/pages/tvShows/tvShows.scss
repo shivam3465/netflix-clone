@@ -11,7 +11,16 @@
     .desc{
         margin: 2rem 0rem;
         font-size: 1.3rem;
-        width: 45%;
+        width: 43rem;
         padding-right: 1rem;
+    }
+}
+@media screen and (max-width:450px) {
+    .tv-page-container{
+        .desc{
+            width: 100%;
+            font-size: 1.8rem;            
+            margin-bottom: 5rem;
+        }
     }
 }
