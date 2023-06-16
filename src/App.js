@@ -13,7 +13,7 @@ import TvShow from './components/TvShow/TvShow'
 
 export const baseUrl = 'https://api.themoviedb.org/3';
 export const apiKey='0e60dc2cb3e238675effce08a8cdd770'
-export const imagebaseUrl= `https://image.tmdb.org/t/p/w500`
+export const imagebaseUrl= `https://image.tmdb.org/t/p/original/`
 
 function App() { 
     

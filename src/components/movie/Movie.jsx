@@ -82,13 +82,13 @@ export default function Movie() {
     <div id='details'>
 
       {loading ? <Spinner/> :   
-      <img src={imageLink ? `https://image.tmdb.org/t/p/w500${imageLink}`: notFoundImage} alt="" id='movie-poster' />}
+      <img src={imageLink ? `${imagebaseUrl}${imageLink}`: notFoundImage} alt="" id='movie-poster' />}
 
       { loading ? <Spinner/>:
 
         <div id='top'>                      
           <div id="movie-detail">          
-            <img src={logoLink.length ? `https://image.tmdb.org/t/p/w500${logoLink}` :netflix_logo} alt="" id="movie-logo" />
+            <img src={logoLink.length ? `${imagebaseUrl}${logoLink}` :netflix_logo} alt="" id="movie-logo" />
             <div id="movie-title" className='middle'>{movie.original_title}</div>
             <div id="middle-details" className='middle'>
               {movie.release_date.slice(0,4)} &nbsp;| <span id='adult-checker'> U/A {movie.adult ? "18+":"16+"}</span> &nbsp; | {Math.floor(movie.runtime/60)}h {movie.runtime%60}m  |  {movie.genres[0].name}

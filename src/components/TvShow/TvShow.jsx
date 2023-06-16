@@ -82,13 +82,13 @@ export default function TvShow() {
     <div id='details'>
 
       {loading ? <Spinner/> :   
-      <img src={imageLink ? `https://image.tmdb.org/t/p/w500${imageLink}`: notFoundImage} alt="" id='movie-poster' />}
+      <img src={imageLink ? `${imagebaseUrl}${imageLink}`: notFoundImage} alt="" id='movie-poster' />}
 
       { loading ? <Spinner/>:
 
         <div id='top'>                      
           <div id="movie-detail">          
-            <img src={logoLink.length ? `https://image.tmdb.org/t/p/w500${logoLink}` :netflix_logo} alt="" id="movie-logo" />
+            <img src={logoLink.length ? `${imagebaseUrl}${logoLink}` :netflix_logo} alt="" id="movie-logo" />
             <div id="movie-title" className='middle'>{movie.name}</div>
 
             <div id="middle-details" className='middle'>
