@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,200;1,300;1,400&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,200;1,300;1,400&family=Ubuntu&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;  
+    scroll-behavior: smooth;  
+}
+
+@media screen and (max-width: 900px) and (min-width: 800px) {
+    html{
+        font-size: 80%;
+    }
+}
+@media screen and (max-width: 800px) and (min-width: 768px) {
+    html{
+        font-size: 75%;
+    }
+}
+@media screen and (max-width: 768px) and (min-width: 580px) {
+    html{
+        font-size: 70%;
+    }
+}
+@media screen and (max-width: 580px){
+    html{
+        font-size: 65%;        
+    }   
+}

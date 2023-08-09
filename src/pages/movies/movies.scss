@@ -1,0 +1,27 @@
+.movies-page-container{
+    padding-top: 6rem;
+    padding-left: 2rem;
+    font-family: sans-serif;
+    background-color: rgb(23,23,23) !important;
+    color: white !important;
+    scroll-behavior: smooth;
+    h1{
+        font-size: 2.8rem;
+    }
+    .desc{
+        margin: 2rem 0rem;
+        font-size: 1.3rem;
+        width: 45%;
+        padding-right: 1rem;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .movies-page-container{
+        .desc{
+            width: 100%;
+            font-size: 1.8rem;            
+            margin-bottom: 5rem;
+        }
+    }
+}
